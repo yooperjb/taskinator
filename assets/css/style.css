@@ -3,7 +3,7 @@
 }
 
 :root {
-  --primary: #44e9ff;
+  --primary: hsl(187, 100%, 63%);
   --secondary: #497980;
   --tertiary: rgb(192, 246, 253);
   --grey: #333;
@@ -11,7 +11,7 @@
 }
 
 body {
-  background: #ededed;
+  background: rgb(237, 237, 237);
   color: var(--grey);
   margin: 0;
   padding: 0;

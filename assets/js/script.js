@@ -5,7 +5,7 @@ var tasksInProgressEl = document.querySelector("#tasks-in-progress");
 var tasksCompletedEl = document.querySelector("#tasks-completed");
 var taskIdCounter = 0;
 
-// When submit button is clicked taskFormHandler is run
+// When "Add Task" (submit) button is clicked taskFormHandler is run
 var taskFormHandler = function(event) {
 
     // get values from text input and drop down selector
@@ -246,3 +246,4 @@ pageContentEl.addEventListener("dragstart", dragTaskHandler);
 pageContentEl.addEventListener("dragover", dropZoneDragHandler);
 pageContentEl.addEventListener("drop", dropTaskHandler);
 pageContentEl.addEventListener("dragleave", dragLeaveHandler);
+console.dir(window.document);
