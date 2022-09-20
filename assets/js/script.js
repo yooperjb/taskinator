@@ -6,6 +6,7 @@ var tasksCompletedEl = document.querySelector("#tasks-completed");
 var taskIdCounter = 0;
 
 // When "Add Task" (submit) button is clicked taskFormHandler is run
+// Gets form values, edit task or create new task createTaskEl()
 var taskFormHandler = function(event) {
 
     // get values from text input and drop down selector
@@ -41,7 +42,7 @@ var taskFormHandler = function(event) {
     }
 };
 
-// create a new "Task To Do"
+// create a new "Task To Do" using form values
 var createTaskEl = function(taskDataObj) {
     // create list item, assign class name
     var listItemEl = document.createElement("li");
@@ -114,7 +115,7 @@ var createTaskActions = function(taskId) {
 
     actionContainerEl.appendChild(statusSelectEl);
     
-    // dropdown options arrary
+    // dropdown options array
     var statusChoices = ["To Do", "In Progress", "Completed"];
     
     for (let i = 0; i < statusChoices.length; i++) {
@@ -160,12 +161,12 @@ var editTask = function(taskId) {
 
     // get content from task name and type
     var taskName = taskSelected.querySelector("h3.task-name").textContent;
-
     var taskType = taskSelected.querySelector("span.task-type").textContent;
 
-    // tranfer taskName and taskType to form inputs
+    // transfer taskName and taskType to form inputs
     document.querySelector("input[name='task-name']").value = taskName;
     document.querySelector("select[name='task-type']").value = taskType;
+    // Change "Add Task" button to "Save Task"
     document.querySelector("#save-task").textContent = "Save Task";
     // this sets an attribute to the form itself to use later
     formEl.setAttribute("data-task-id", taskId);
